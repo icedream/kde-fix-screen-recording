@@ -51,7 +51,7 @@ func (m *dbusMonitor) convertEvent(dbusMessageC <-chan *dbus.Message, eventC cha
 			continue
 		}
 
-		if interfaceName == "org.freedesktop.PowerManagement.Inhibit" && memberName == "Uninhibit" &&
+		if interfaceName == "org.freedesktop.PowerManagement.Inhibit" && memberName == "UnInhibit" &&
 			m.lastInhibitMessage != nil &&
 			m.lastInhibitMessage.Headers[dbus.FieldSender].Value() == dbusMessage.Headers[dbus.FieldSender].Value() {
 			spew.Dump(dbusMessage)
