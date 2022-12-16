@@ -1,0 +1,9 @@
+[Unit]
+Description=KDE Fix Screen Recording
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kde-fix-screen-recording
+
+[Install]
+WantedBy=default.target
