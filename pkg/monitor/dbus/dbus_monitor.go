@@ -32,7 +32,7 @@ func (m *dbusMonitor) convertEvent(dbusMessageC <-chan *dbus.Message, eventC cha
 		interfaceName := dbusMessage.Headers[dbus.FieldInterface].Value()
 		memberName := dbusMessage.Headers[dbus.FieldMember].Value()
 
-		if interfaceName == "org.freedesktop.PowerManagement" && memberName == "Inhibit" && len(dbusMessage.Body) >= 3 {
+		if interfaceName == "org.freedesktop.PowerManagement" && memberName == "Inhibit" && len(dbusMessage.Body) >= 2 {
 			spew.Dump(dbusMessage)
 			// inhibitBinary, ok := dbusMessage.Body[0].(string)
 			// if !ok {
